@@ -7,12 +7,13 @@ checkD= {}
 checkC= {}
 prevD = 0
 prevC = 0
-D = 0
-C = 0
-dave_dice = set()
-campbell_dice = set()
+dave_dice = []
+campbell_dice = []
 for line in open("Dice.txt", "r"):
-    print(line)
+
+    dave_dice = line.split()
+    [eval(i) for i in dave_dice]
+    print(dave_dice)
 #loop the inputs
 while continuing:
 #davids inputs
@@ -26,8 +27,7 @@ while continuing:
             for amount in range(len(cal)):
                 dave_roll = int(cal[amount])
 #add to set
-        dave_dice.add(int(dave_roll))
-        D += 1
+        dave_dice.append(int(dave_roll))
 
 #campbells inputs
     for rolls in range(5):
@@ -40,8 +40,7 @@ while continuing:
             for amount in range(len(cal)):
                 campbell_roll += int(cal[amount])
 #add to set
-        campbell_dice.add(int(campbell_roll))
-        C += 1
+        campbell_dice.append(int(campbell_roll))
 #continue?
     continuing = input("continue?: ")
 
@@ -87,4 +86,9 @@ for numbers in checkC:
         prevC = current
         dicevalC = numbers
 print("daves most rolled is:",dicevalD, "and this was rolled", prevD, "times.and campbells was:", dicevalC, "rolled",prevC, "Times")
-
+f = open("Dice.txt", "a")
+for roll in dave_dice:
+    f.write (str(roll) + " ")
+f.write ("\n")
+f.write (str(campbell_dice))
+f.close()
