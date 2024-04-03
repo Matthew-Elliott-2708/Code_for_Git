@@ -9,11 +9,12 @@ prevD = 0
 prevC = 0
 dave_dice = []
 campbell_dice = []
-for line in open("Dice.txt", "r"):
-
+for line in open("Dave_Dice.txt", "r"):
     dave_dice = line.split()
-    [eval(i) for i in dave_dice]
-    print(dave_dice)
+    dave_dice = [ int(x) for x in dave_dice ]
+for line in open("Campbell_Dice.txt", "r"):
+    campbell_dice = line.split()
+    campbell_dice = [ int(x) for x in campbell_dice ]
 #loop the inputs
 while continuing:
 #davids inputs
@@ -85,10 +86,14 @@ for numbers in checkC:
     if current > prevC:
         prevC = current
         dicevalC = numbers
+open('Campbell_Dice.txt', 'w').close()
+open('Dave_Dice.txt', 'w').close()
 print("daves most rolled is:",dicevalD, "and this was rolled", prevD, "times.and campbells was:", dicevalC, "rolled",prevC, "Times")
-f = open("Dice.txt", "a")
+f = open("Dave_Dice.txt", "a")
 for roll in dave_dice:
     f.write (str(roll) + " ")
-f.write ("\n")
-f.write (str(campbell_dice))
+f.close()
+f = open("Campbell_Dice.txt", "a")
+for roll in campbell_dice:
+    f.write (str(roll) + " ")
 f.close()
