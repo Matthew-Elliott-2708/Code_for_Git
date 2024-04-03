@@ -86,9 +86,18 @@ for numbers in checkC:
     if current > prevC:
         prevC = current
         dicevalC = numbers
+
+if prevD == 0 and prevC == 0:
+    print("dave did not have a most rolled as it was tied and Campbell did not have a most rolled as it was tied")
+elif prevD == 0:
+    print("dave did not have a most rolled as it was tied", "campbells mos rolled was:", dicevalC, "rolled",prevC, "Times")
+elif prevC == 0:
+    print("daves most rolled is:",dicevalD, "and this was rolled", prevD, "times. Campbell did not have a most rolled as it was tied")
+else:
+    print("daves most rolled is:",dicevalD, "and this was rolled", prevD, "times.and campbells was:", dicevalC, "rolled",prevC, "Times")
+    
 open('Campbell_Dice.txt', 'w').close()
 open('Dave_Dice.txt', 'w').close()
-print("daves most rolled is:",dicevalD, "and this was rolled", prevD, "times.and campbells was:", dicevalC, "rolled",prevC, "Times")
 f = open("Dave_Dice.txt", "a")
 for roll in dave_dice:
     f.write (str(roll) + " ")
