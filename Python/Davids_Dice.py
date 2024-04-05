@@ -1,24 +1,25 @@
 def main():
-    def most_roled(dice):
-        for i in campbell_dice:
+    prev = 0
+    diceval = 0
+    def most_roled(dice, prev, diceval):
+        for i in dice:
             k.append(i)
         for word in range(len(k)):
-            if k[word] in checkC:
-                checkC[k[word]] += 1
+            if k[word] in check:
+                check[k[word]] += 1
             else:
-                checkC[k[word]] = 1
-        for numbers in checkC:
-            current = checkC[numbers]
-            if current > prevC:
-                prevC = current
-                dicevalC = numbers
+                check[k[word]] = 1
+        for numbers in check:
+            current = check[numbers]
+            if current > prev:
+                prev = current
+                diceval = numbers
 
     continuing = " "
     allD = 0
     allC = 0
     k = []
-    checkD= {}
-    checkC= {}
+    check= {}
     prevD = 0
     prevC = 0
     dave_dice = []
@@ -77,10 +78,15 @@ def main():
         
     #davids most rolled
     dice = dave_dice
-    most_roled()
+    most_roled(dice, prev, diceval)
+    prevD = prev
+    dicevalD = diceval
     k = []
+    check = {}
     dice = campbell_dice
-    most_roled()
+    most_roled(dice, prev, diceval)
+    prevC = prev
+    dicevalC = diceval
 
     if prevD == 0 and prevC == 0:
         print("dave did not have a most rolled as it was tied and Campbell did not have a most rolled as it was tied")
