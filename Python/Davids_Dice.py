@@ -1,24 +1,32 @@
 def main():
-    def most_roled(dice):
-        for i in campbell_dice:
+    prev = 0
+    diceval = 0
+    def most_roled(dice, prev, diceval):
+        for i in dice:
             k.append(i)
         for word in range(len(k)):
-            if k[word] in checkC:
-                checkC[k[word]] += 1
+            if k[word] in check:
+                check[k[word]] += 1
             else:
-                checkC[k[word]] = 1
-        for numbers in checkC:
-            current = checkC[numbers]
-            if current > prevC:
-                prevC = current
-                dicevalC = numbers
+                check[k[word]] = 1
+        for numbers in check:
+            current = check[numbers]
+            if current > prev:
+                prev = current
+                diceval = numbers
 
     continuing = " "
     allD = 0
     allC = 0
     k = []
+<<<<<<< HEAD
     checkD= {}
     checkC= {}
+=======
+    check= {}
+    prevD = 0
+    prevC = 0
+>>>>>>> 4f052e4c0f17d311d35360256b7148f9fac43a09
     dave_dice = []
     campbell_dice = []
     with open("Dave_Dice.txt", "r") as davids_files:
@@ -75,10 +83,23 @@ def main():
         
     #davids most rolled
     dice = dave_dice
+<<<<<<< HEAD
     most_roled(dice)
+=======
+    most_roled(dice, prev, diceval)
+    prevD = prev
+    dicevalD = diceval
+>>>>>>> 4f052e4c0f17d311d35360256b7148f9fac43a09
     k = []
+    check = {}
     dice = campbell_dice
+<<<<<<< HEAD
     most_roled(dice)
+=======
+    most_roled(dice, prev, diceval)
+    prevC = prev
+    dicevalC = diceval
+>>>>>>> 4f052e4c0f17d311d35360256b7148f9fac43a09
 
     if prevD == 0 and prevC == 0:
         print("dave did not have a most rolled as it was tied and Campbell did not have a most rolled as it was tied")
