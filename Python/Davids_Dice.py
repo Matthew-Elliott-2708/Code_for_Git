@@ -19,8 +19,6 @@ def main():
     k = []
     checkD= {}
     checkC= {}
-    prevD = 0
-    prevC = 0
     dave_dice = []
     campbell_dice = []
     with open("Dave_Dice.txt", "r") as davids_files:
@@ -77,10 +75,10 @@ def main():
         
     #davids most rolled
     dice = dave_dice
-    most_roled()
+    most_roled(dice)
     k = []
     dice = campbell_dice
-    most_roled()
+    most_roled(dice)
 
     if prevD == 0 and prevC == 0:
         print("dave did not have a most rolled as it was tied and Campbell did not have a most rolled as it was tied")
