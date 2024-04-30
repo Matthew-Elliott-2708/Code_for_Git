@@ -19,14 +19,11 @@ def main():
     allD = 0
     allC = 0
     k = []
-<<<<<<< HEAD
     checkD= {}
     checkC= {}
-=======
     check= {}
     prevD = 0
     prevC = 0
->>>>>>> 4f052e4c0f17d311d35360256b7148f9fac43a09
     dave_dice = []
     campbell_dice = []
     with open("Dave_Dice.txt", "r") as davids_files:
