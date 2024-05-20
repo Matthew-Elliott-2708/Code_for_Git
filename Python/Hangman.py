@@ -15,6 +15,7 @@ words = open('hangman_words.txt', 'w')
 for word in final:
     words.write(word + " ")
 words.close()
+
 file = open("hangman_words.txt")
 all = file.read().split()
 word = all[:1]
