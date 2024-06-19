@@ -25,9 +25,8 @@ print(final_word)
 win = False
 underscores = " "
 dead = 0 
-i = 1
 print(" |‾|")
-print(" | ")
+print(" |")
 print(" |")
 print(" |")
 print("_|_")
@@ -35,15 +34,17 @@ for letters in range(len(final_word)):
     underscores += "_ "
 print(underscores)
 while dead != 6 and win == False:
+    i = 0
     guess = input("Please guess a letter or the whole word : ")
     if guess == final_word:
         print("CONGRATULATIONS YOU GUESSED CORRECTLY!")
         win = True
     elif guess in final_word:
         print(guess)
-        for letters in len(final_word):
-            if guess == final_word[i:1]:
-                print("L")
+        list_final_word = list(final_word)
+        for letters in range(len(final_word)):
+            if guess == list_final_word[1:i]:
+                print(i)
                 i += 1
             else:
                 i += 1
